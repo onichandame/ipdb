@@ -6,7 +6,11 @@ describe('Database', () => {
   let ipfs: IPFS
 
   beforeAll(async done => {
-    ipfs = await create({ silent: true, EXPERIMENTAL: { ipnsPubsub: true } })
+    ipfs = await create({
+      offline: true,
+      silent: true,
+      EXPERIMENTAL: { ipnsPubsub: true },
+    })
     done()
   }, 10000)
 
